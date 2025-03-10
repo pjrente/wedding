@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>M&P</title>
+<style>
+	@font-face {
+        font-family: 'CustomFont';
+        src: url('font/perfectocalligraphy.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+        .titulo {
+            text-align: center;
+        font-family: 'CustomFont', serif;
+        font-size: 5rem;
+        font-weight: normal;
+        color: #DAB143;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        }
+.countdown {
+        text-align: center;
+        font-size: 2rem;
+        color: #DAB143;
+        font-weight: bold;
+        margin: 50px 0;
+    }
+#section1 {
+        text-align: center;
+    }
+    </style>
+<meta charset="utf-8">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+<meta name="description" content="M&P Wedding">
+<meta name="keywords" content="wedding">
+<meta name="author" content="Rente">
+<meta name = "format-detection" content = "telephone=no" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!--CSS-->
+<link rel="stylesheet" href="css/bootstrap.css?v=2">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/camera.css">
+<!--JS-->
+<script src="js/jquery.js"></script>
+<script src="js/jquery-migrate-1.1.1.js"></script>
+<script src="js/superfish.js"></script>
+<script src="js/jquery.mobilemenu.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/camera.js"></script>
+<script src="js/jquery.ui.totop.js"></script>
+<script src="js/forms.js"></script>
+<script>
+    $(document).ready(function(){
+        jQuery('.camera_wrap').camera();
+        function goToByScroll(id){$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');}
+    });
+</script>
+<!--[if (gt IE 9)|!(IE)]><!-->
+      <script type="text/javascript" src="js/jquery.mobile.customized.min.js"></script>
+<!--<![endif]-->    
+<!--[if lt IE 8]>
+		<div style='text-align:center'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/img/upgrade.jpg"border="0"alt=""/></a></div>  
+<![endif]-->
+<!--[if lt IE 9]>
+  <link rel="stylesheet" href="css/ie.css">
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<script>
+    function updateCountdown() {
+        const weddingDate = new Date("August 30, 2025 16:30:00").getTime();
+        const now = new Date().getTime();
+        const timeLeft = weddingDate - now;
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown_days").innerHTML = `${days} dias`;
+        document.getElementById("countdown_hours").innerHTML = `${hours} horas`;
+        document.getElementById("countdown_minutes").innerHTML = `${minutes} minutos`;
+        document.getElementById("countdown_seconds").innerHTML = `e ${seconds} segundos!`;
+
+    }
+    setInterval(updateCountdown, 1000);
+</script>
+<body>
+<div class="global">
+<div class="main">
+<!--header-->
+<header class="borderNone">
+    <div class="container">
+         <div class="navbar navbar_ clearfix">
+            <div class="navbar-inner">      
+                  <div class="clearfix">
+			<h1 class="brand"><img src="img/logo3.png" alt="" style="width: 600px; height: auto;"></h1>
+                        <div class="nav-collapse nav-collapse_ collapse"">
+                        	<ul class="nav sf-menu clearfix">
+<li><a href="#section0">Home</a></li>
+				<li><a href="#section1">Mensagem</a></li>
+                              <li><a href="#section2">Onde & Quando</a></li>
+				<li><a href="#section3">Alojamentos & Dress Code</a></li> 
+                              <li><a href="https://forms.gle/16KjB4CsCuFBMkTF8" target="_blank">Confirmar</a></li>                       
+                            </ul>
+                        </div>                                                                                                                   
+                  </div>
+             </div>  
+         </div>
+    </div>
+</header>
+<section id="section0" class="border1">
+    <div class="container">
+        <div class="row">
+            <article class="span12 slider">
+                <div class="camera_wrap">
+                 <div data-src="img/5.jpeg"></div>
+		<div data-src="img/40.PNG"></div>
+		<div data-src="img/14.png"></div>
+		<div data-src="img/12.png"></div>
+                </div>
+             </article>
+         </div>
+     </div>
+ </section>
+
+<!-- Mensagem Section -->
+<section id="section1" class="border1">
+    <div class="container">
+        <div class="row">
+    <h1 style="color: #DAB143;">Mensagem dos Noivos</h1>
+    <h2 style="color: #DAB143;font-style: italic;margin-top: 40px;">Se estás nesta página é porque queremos que faças parte deste dia tão especial!<BR/><BR/><BR/>Aqui encontras todas as informações necessárias e podes confirmar a tua presença.<BR/><BR/><BR/>Ficamos à espera que partilhes connosco este momento de alegria, amor e festa!</h2>
+<audio controls>
+  <source src="audio/mensagem.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</div>
+</div>
+</section>
+
+    <!--content-->
+ <section id="section2" class="border1">
+    <div class="container">
+        <div class="row">
+             <article class="span6">
+                <h1 style="color: #DAB143;">Onde</h1>
+<div class="caption">
+
+                            <p><a href="https://g.co/kgs/G27v5J6" target="_blank">R. Nossa Sra. da Memória, 2665-001 Vila Franca do Rosário</a></p>
+			
+                        </div>
+                <div class="thumb-pad2">
+                    <div class="thumbnail">
+                        <!--<figure><img src="img/ourquinta.png" alt=""></figure>-->
+<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d99241.95595581585!2d-9.335553242440136!3d38.98539512394854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0xd1f2b19abcc71ed%3A0x38e507335c618c4d!2sR.%20Nossa%20Sra.%20da%20Mem%C3%B3ria%2C%202665-001%20Vila%20Franca%20do%20Ros%C3%A1rio!3m2!1d38.9854165!2d-9.2531818!5e0!3m2!1spt-PT!2spt!4v1739836425876!5m2!1spt-PT!2spt" width="550" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+             </article>
+		<article class="span6">
+                <h1 style="color: #DAB143;">Quando</h1>
+			<div class="caption">
+
+                            <p>30 de agosto de 2025 a partir das 16h30</p>
+			
+                        </div>
+                <div class="thumb-pad2">
+                    <div class="thumbnail">
+                        <figure><img src="img/quando3.png" alt=""></figure>
+                    </div>
+                </div>
+             </article>
+         </div>
+    </div>
+ </section>
+
+ <section id="section3" class="border1">
+<div class="container">
+        <div class="row">
+<article class="span6">
+                <h1 style="color: #DAB143;">Alojamentos na Quinta</h1>
+			<p>Preço dos quartos - 130€ c/ peq. almoço incluído</p>
+			<p>Check in: entre as 15h00 e as 00h00. Check out: até às 12h00</p> 
+			<p>Reservas no link de confirmação, mediante disponibilidade.</p>
+                       <figure><img src="img/alojamento.png" alt=""></figure>
+             </article>
+		<article class="span6">
+                <h1 style="color: #DAB143;">Dress Code</h1>
+	                            <p>Casual Chic, palete de cores Wildflowers</p>
+                <div class="thumb-pad2">
+                    <div class="thumbnail">
+                        <figure><img src="img/palete2.png" alt=""></figure>
+                    </div>
+                </div>
+             </article>
+
+ </div>
+ </div>
+ </section>
+
+
+<!-- Countdown Section -->
+<section id="section4" class="countdown">
+    <h2 style="color: #DAB143;">Quanto tempo falta</h2>
+    <p id="countdown_days"></p>
+    <p id="countdown_hours"></p>
+    <p id="countdown_minutes"></p>
+    <p id="countdown_seconds"></p>
+</section>
+
+
+<!--footer-->
+<footer>
+    <div class="main">
+        <div class="container">
+            <div class="row">
+                <article class="span12">
+                    <p>&bull;M&P &copy; 2025 &bull;</p>
+                </article>
+            </div>
+            <!-- {%FOOTER_LINK} -->
+        </div>  
+    </div>  
+</footer>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+</html>

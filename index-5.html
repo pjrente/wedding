@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Easter Egg Game</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #000;
+            position: relative;
+            color: white;
+            font-family: Arial, sans-serif;
+            cursor: none;
+        }
+        .uv-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: url('dark-texture.jpg') repeat;
+            z-index: 2;
+        }
+        .uv-light {
+            position: fixed;
+            width: 75px;
+            height: 75px;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.5) 20%, rgba(0, 0, 0, 0.7) 100%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 3;
+        }
+        .hidden-egg {
+            position: absolute;
+            color: yellow;
+            font-size: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="uv-overlay"></div>
+    <div class="uv-light" id="uvLight"></div>
+    
+    <!-- Hidden Easter Eggs -->
+    <div class="hidden-egg" style="top: 30%; left: 20%">🥚</div>
+    <div class="hidden-egg" style="top: 60%; left: 50%">🐰</div>
+    <div class="hidden-egg" style="top: 80%; left: 75%">🌸</div>
+    
+    <script>
+        const uvLight = document.getElementById('uvLight');
+        document.addEventListener('mousemove', (e) => {
+            uvLight.style.top = `${e.clientY - 37.5}px`;
+            uvLight.style.left = `${e.clientX - 37.5}px`;
+        });
+        
+        document.addEventListener('mousemove', (e) => {
+            document.querySelectorAll('.hidden-egg').forEach(egg => {
+                const rect = egg.getBoundingClientRect();
+                const distance = Math.hypot(e.clientX - (rect.left + rect.width / 2), e.clientY - (rect.top + rect.height / 2));
+                
+                if (distance < 75) {
+                    egg.style.opacity = '1';
+                } else {
+                    egg.style.opacity = '0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
