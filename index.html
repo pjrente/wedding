@@ -4,8 +4,11 @@
 <title>M&P</title>
 <style>
 @media (max-width: 768px) {
-    .nav-collapse {
+    .borderNone {
         display: none; /* Hide menu on mobile */
+    }
+    .borderNoneMobile {
+        display: block; /* Hide menu on mobile */
     }
 }
 	@font-face {
@@ -99,13 +102,20 @@ p {
 <div class="global">
 <div class="main">
 <!--header-->
+<header class="borderNoneMobile" style="display:none">
+<div class="container">
+         <h1 class="brand"><img src="img/logo3.png" alt="" style="width: 600px; height: auto;"></h1>
+	<h1 style="color: #DAB143;"><a href="https://forms.gle/16KjB4CsCuFBMkTF8" target="_blank">CONFIRMAR</a></h1>
+         </div>
+</header>
+
 <header class="borderNone">
     <div class="container">
          <div class="navbar navbar_ clearfix">
             <div class="navbar-inner">      
                   <div class="clearfix">
 			<h1 class="brand"><img src="img/logo3.png" alt="" style="width: 600px; height: auto;"></h1>
-                        <div class="nav-collapse nav-collapse_ collapse"">
+                        <div class="nav-collapse nav-collapse_ collapse">
                         	<ul class="nav sf-menu clearfix">
 <li><a href="#section0">Home</a></li>
 				<li><a href="#section1">Mensagem</a></li>
