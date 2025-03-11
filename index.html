@@ -3,6 +3,53 @@
 <head>
 <title>M&P</title>
 <style>
+.menu-toggle {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #DAB143;
+    cursor: pointer;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #DAB143;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show only on small screens */
+    }
+
+    nav ul {
+        display: none; /* Hide menu initially */
+        flex-direction: column;
+        gap: 10px;
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #DAB143;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+    }
+
+    nav ul.show {
+        display: flex; /* Show menu when toggled */
+    }
+}
+
+
 	@font-face {
         font-family: 'CustomFont';
         src: url('font/perfectocalligraphy.ttf') format('truetype');
@@ -59,6 +106,12 @@ p {
         jQuery('.camera_wrap').camera();
         function goToByScroll(id){$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');}
     });
+const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+    });
 </script>
 <!--[if (gt IE 9)|!(IE)]><!-->
       <script type="text/javascript" src="js/jquery.mobile.customized.min.js"></script>
@@ -101,6 +154,7 @@ p {
                   <div class="clearfix">
 			<h1 class="brand"><img src="img/logo3.png" alt="" style="width: 600px; height: auto;"></h1>
                         <div class="nav-collapse nav-collapse_ collapse"">
+				<button class="menu-toggle">☰ Menu</button>
                         	<ul class="nav sf-menu clearfix">
 <li><a href="#section0">Home</a></li>
 				<li><a href="#section1">Mensagem</a></li>
