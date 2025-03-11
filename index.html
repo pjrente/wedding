@@ -3,9 +3,31 @@
 <head>
 <title>M&P</title>
 <style>
-/* Mobile menu toggle button */
+	/* Base styles for both menus */
+.desktop-menu, .mobile-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.desktop-menu li, .mobile-menu li {
+    padding: 10px 20px;
+}
+
+.desktop-menu a, .mobile-menu a {
+    text-decoration: none;
+    color: #DAB143;
+}
+
+/* Desktop menu (default) */
+.desktop-menu {
+    display: flex;
+    gap: 20px;
+}
+
+/* Mobile menu (hidden by default) */
 .menu-toggle {
-    display: none; /* Hidden by default */
+    display: none;
     background: none;
     border: none;
     font-size: 2rem;
@@ -14,44 +36,33 @@
     padding: 10px;
 }
 
-/* Navigation menu */
-nav ul {
-    list-style: none;
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    border: 1px solid #DAB143;
+    padding: 20px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+}
+
+.mobile-menu.show {
     display: flex;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
 }
 
-nav a {
-    text-decoration: none;
-    color: #DAB143;
-}
-
-/* Mobile view adjustments */
+/* Responsive adjustments */
 @media (max-width: 768px) {
+    .desktop-menu {
+        display: none; /* Hide desktop menu on mobile */
+    }
+
     .menu-toggle {
-        display: block; /* Show toggle button */
-    }
-
-    nav ul {
-        display: none; /* Hide menu */
-        flex-direction: column;
-        gap: 10px;
-        background-color: #fff;
-        padding: 20px;
-        border: 1px solid #DAB143;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 200px;
-    }
-
-    nav ul.show {
-        display: flex; /* Show menu when toggled */
+        display: block; /* Show hamburger icon on mobile */
     }
 }
-
 
 
 	@font-face {
@@ -111,10 +122,11 @@ p {
         function goToByScroll(id){$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');}
     });
 const menuToggle = document.querySelector('.menu-toggle');
-const navMenu = document.querySelector('.nav-collapse ul');
+    const mobileMenu = document.querySelector('.mobile-menu');
 
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('show');
+    });
 });
 
 </script>
@@ -154,23 +166,34 @@ menuToggle.addEventListener('click', () => {
 <!--header-->
 <header class="borderNone">
     <div class="container">
-         <div class="navbar navbar_ clearfix">
+        <div class="navbar navbar_ clearfix">
             <div class="navbar-inner">      
-                  <div class="clearfix">
-			<h1 class="brand"><img src="img/logo3.png" alt="" style="width: 600px; height: auto;"></h1>
-                        <div class="nav-collapse nav-collapse_ collapse"">
-				<button class="menu-toggle">☰ Menu</button>
-                        	<ul class="nav sf-menu clearfix">
-<li><a href="#section0">Home</a></li>
-				<li><a href="#section1">Mensagem</a></li>
-                              <li><a href="#section2">Onde & Quando</a></li>
-				<li><a href="#section3">Alojamentos & Dress Code</a></li> 
-                              <li><a href="https://forms.gle/16KjB4CsCuFBMkTF8" target="_blank">Confirmar</a></li>                       
-                            </ul>
-                        </div>                                                                                                                   
-                  </div>
-             </div>  
-         </div>
+                <div class="clearfix">
+                    <h1 class="brand"><img src="img/logo3.png" alt="Logo" style="width: 600px; height: auto;"></h1>
+                    
+                    <!-- Desktop menu -->
+                    <ul class="desktop-menu">
+                        <li><a href="#section0">Home</a></li>
+                        <li><a href="#section1">Mensagem</a></li>
+                        <li><a href="#section2">Onde & Quando</a></li>
+                        <li><a href="#section3">Alojamentos & Dress Code</a></li>
+                        <li><a href="https://forms.gle/16KjB4CsCuFBMkTF8" target="_blank">Confirmar</a></li>
+                    </ul>
+                    
+                    <!-- Mobile menu toggle button -->
+                    <button class="menu-toggle">☰ Menu</button>
+                    
+                    <!-- Mobile menu -->
+                    <ul class="mobile-menu">
+                        <li><a href="#section0">Home</a></li>
+                        <li><a href="#section1">Mensagem</a></li>
+                        <li><a href="#section2">Onde & Quando</a></li>
+                        <li><a href="#section3">Alojamentos & Dress Code</a></li>
+                        <li><a href="https://forms.gle/16KjB4CsCuFBMkTF8" target="_blank">Confirmar</a></li>
+                    </ul>
+                </div>
+            </div>  
+        </div>
     </div>
 </header>
 <section id="section0" class="border1">
