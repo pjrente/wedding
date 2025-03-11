@@ -3,6 +3,7 @@
 <head>
 <title>M&P</title>
 <style>
+/* Mobile menu toggle button */
 .menu-toggle {
     display: none; /* Hidden by default */
     background: none;
@@ -13,6 +14,7 @@
     padding: 10px;
 }
 
+/* Navigation menu */
 nav ul {
     list-style: none;
     display: flex;
@@ -26,13 +28,14 @@ nav a {
     color: #DAB143;
 }
 
+/* Mobile view adjustments */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block; /* Show only on small screens */
+        display: block; /* Show toggle button */
     }
 
     nav ul {
-        display: none; /* Hide menu initially */
+        display: none; /* Hide menu */
         flex-direction: column;
         gap: 10px;
         background-color: #fff;
@@ -48,6 +51,7 @@ nav a {
         display: flex; /* Show menu when toggled */
     }
 }
+
 
 
 	@font-face {
@@ -107,11 +111,12 @@ p {
         function goToByScroll(id){$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');}
     });
 const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('nav ul');
+const navMenu = document.querySelector('.nav-collapse ul');
 
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('show');
-    });
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+});
+
 </script>
 <!--[if (gt IE 9)|!(IE)]><!-->
       <script type="text/javascript" src="js/jquery.mobile.customized.min.js"></script>
