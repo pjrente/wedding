@@ -114,16 +114,16 @@ p {
 setInterval(updateCountdown, 1000);
  document.addEventListener('DOMContentLoaded', () => {
         const fullscreenImage = document.getElementById('fullscreenImage');
-        const mainID = document.getElementById('mainID');
+        const globalID = document.getElementById('globalID');
         // Only show if screen width is less than 768px (mobile)
         if (window.innerWidth <= 768) {
             fullscreenImage.style.display = 'flex';
-            mainID.style.display = 'none';
+            globalID.style.display = 'none';
             setTimeout(() => {
                 fullscreenImage.style.opacity = '0';
                 setTimeout(() => {
                     fullscreenImage.style.display = 'none';
-                    mainID.style.display = 'block';
+                    globalID.style.display = 'block';
                 }, 1000); // Time for fade out effect
             }, 3000);
         }
@@ -131,8 +131,8 @@ setInterval(updateCountdown, 1000);
 </script>
 <body>
 <div class="fullscreen-image" id="fullscreenImage"></div>
-<div class="global">
-<div class="main" id="mainID">
+<div class="global" id="globalID">
+<div class="main">
 <!--header-->
 <header class="borderNone">
     <div class="container">
