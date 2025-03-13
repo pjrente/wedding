@@ -3,12 +3,34 @@
 <head>
 <title>M&P</title>
 <style>
+@media (max-width: 768px) {
+	.navbar {
+		display: none;
+	}
+}
 	@font-face {
         font-family: 'CustomFont';
         src: url('font/perfectocalligraphy.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
+
+.fullscreen-image {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: url('img/fullscreen.png') no-repeat center;
+        background-size: cover;
+        z-index: 9999;
+        opacity: 1;
+        transition: opacity 1s ease;
+    }
+
         .titulo {
             text-align: center;
         font-family: 'CustomFont', serif;
@@ -88,11 +110,28 @@ p {
         document.getElementById("countdown_seconds").innerHTML = `e ${seconds} segundos!`;
 
     }
-    setInterval(updateCountdown, 1000);
+setInterval(updateCountdown, 1000);
+ document.addEventListener('DOMContentLoaded', () => {
+        const fullscreenImage = document.getElementById('fullscreenImage');
+        const mainID = document.getElementById('mainID');
+        // Only show if screen width is less than 768px (mobile)
+        if (window.innerWidth <= 768) {
+            fullscreenImage.style.display = 'flex';
+            mainID.style.display = 'none';
+            setTimeout(() => {
+                fullscreenImage.style.opacity = '0';
+                setTimeout(() => {
+                    fullscreenImage.style.display = 'none';
+                    mainID.style.display = 'block';
+                }, 1000); // Time for fade out effect
+            }, 3000);
+        }
+    });
 </script>
 <body>
+<div class="fullscreen-image" id="fullscreenImage"></div>
 <div class="global">
-<div class="main">
+<div class="main" id="mainID">
 <!--header-->
 <header class="borderNone">
     <div class="container">
@@ -135,10 +174,19 @@ p {
         <div class="row">
     <h1 style="color: #DAB143;">Mensagem dos Noivos</h1>
     <h2 style="color: #DAB143;font-style: italic;margin-top: 40px;">Se estás nesta página é porque queremos que faças parte deste dia tão especial!<BR/><BR/><BR/>Aqui encontras todas as informações necessárias e podes confirmar a tua presença.<BR/><BR/><BR/>Ficamos à espera que partilhes connosco este momento de alegria, amor e festa!</h2>
+</div>
+</div>
+<div class="container">
+        <div class="row">
 <audio controls>
   <source src="audio/mensagem.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
+</div>
+</div>
+    <div class="container">
+        <div class="row"style="margin-top:20px">
+<a href="https://forms.gle/16KjB4CsCuFBMkTF8" target="_blank" data-type="submit" class="btn btn-primary">CONFIRMAR</a>
 </div>
 </div>
 </section>
