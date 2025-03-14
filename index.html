@@ -115,6 +115,7 @@ setInterval(updateCountdown, 1000);
  document.addEventListener('DOMContentLoaded', () => {
         const fullscreenImage = document.getElementById('fullscreenImage');
         const globalID = document.getElementById('globalID');
+	const nextButton = document.querySelector('.camera_next span');
         // Only show if screen width is less than 768px (mobile)
         if (window.innerWidth <= 768) {
             fullscreenImage.style.display = 'flex';
@@ -124,6 +125,11 @@ setInterval(updateCountdown, 1000);
                 setTimeout(() => {
                     fullscreenImage.style.display = 'none';
                     globalID.style.display = 'block';
+		    
+			if (nextButton) {
+			    nextButton.click();
+			
+			}
                 }, 1000); // Time for fade out effect
             }, 2000);
         }
@@ -159,10 +165,10 @@ setInterval(updateCountdown, 1000);
         <div class="row">
             <article class="span12 slider">
                 <div class="camera_wrap">
-                 <div data-src="img/5.jpeg"></div>
-		<div data-src="img/40.png"></div>
-		<div data-src="img/14.png"></div>
-		<div data-src="img/12.png"></div>
+		<div class="camera_wrap_img" data-src="img/12.png"></div>
+		<div class="camera_wrap_img" data-src="img/14.png"></div>
+		<div class="camera_wrap_img" data-src="img/40.png"></div>
+		<div class="camera_wrap_img" data-src="img/5.jpeg"></div>
                 </div>
              </article>
          </div>
