@@ -60,23 +60,34 @@
 </div>
     <script>
         const uvLight = document.getElementById('uvLight');
-        document.addEventListener('mousemove', (e) => {
-            uvLight.style.top = `${e.clientY - 37.5}px`;
-            uvLight.style.left = `${e.clientX - 37.5}px`;
-        });
-        
-        document.addEventListener('mousemove', (e) => {
-            document.querySelectorAll('.hidden-egg').forEach(egg => {
-                const rect = egg.getBoundingClientRect();
-                const distance = Math.hypot(e.clientX - (rect.left + rect.width / 2), e.clientY - (rect.top + rect.height / 2));
-                
-                if (distance < 75) {
-                    egg.style.opacity = '1';
-                } else {
-                    egg.style.opacity = '0';
-                }
-            });
-        });
+
+// Function to move the UV light
+function moveLight(x, y) {
+    uvLight.style.top = `${y - 37.5}px`;
+    uvLight.style.left = `${x - 37.5}px`;
+
+    document.querySelectorAll('.hidden-egg').forEach(egg => {
+        const rect = egg.getBoundingClientRect();
+        const distance = Math.hypot(x - (rect.left + rect.width / 2), y - (rect.top + rect.height / 2));
+
+        if (distance < 75) {
+            egg.style.opacity = '1';
+        } else {
+            egg.style.opacity = '0';
+        }
+    });
+}
+
+// Mouse event for desktop
+document.addEventListener('mousemove', (e) => {
+    moveLight(e.clientX, e.clientY);
+});
+
+// Touch event for mobile
+document.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0]; // Get the first touch point
+    moveLight(touch.clientX, touch.clientY);
+});
     </script>
 </body>
 </html>
